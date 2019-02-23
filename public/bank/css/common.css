@@ -1,5 +1,21 @@
-.body_bg {
-    background-color: #222D32;;
+/* 重置默认的样式 */
+a {
+     color: #333;
+}
+/* lvha */
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.red {
+    color: #A94442;
 }
 
 .panel-title {
@@ -11,4 +27,125 @@
 
 .mt_150 {
     margin-top: 150px;
+}
+.mt_20 {
+    margin-top: 20px;
+}
+
+/* index.html */
+.lt_aside {
+    height: 100%;
+    width: 180px;
+    background-color: #222D32;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    transition: all 1s;
+}
+/* hide 隐藏类  display: none; */
+.lt_aside.hidemenu {
+    left: -180px;
+}
+
+.brand {
+    width: 100%;
+    height: 50px;
+    background-color: #367FA9;
+    text-align: center;
+    line-height: 50px;
+}
+
+.brand a {
+    font-size: 22px;
+    color: #fff;
+}
+
+.lt_aside .user {
+    height: 180px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.lt_aside .user img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+}
+
+.lt_aside .user p {
+    text-align: center;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+}
+
+.lt_aside .nav {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.lt_aside .nav a {
+    display: block;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    border-left: 3px solid transparent;
+}
+
+.lt_aside .nav .child a {
+    padding-left: 16px;
+}
+
+.lt_aside .nav a.current {
+    background-color: #1D1F21;
+    border-left: 3px solid #069;
+}
+
+.lt_aside .nav a i {
+    margin-right: 6px;
+}
+
+.lt_aside .nav .child {
+    display: none;
+}
+
+/* 主体 */
+.lt_main {
+    height: 2000px;
+    padding-left: 180px;
+    padding-top: 50px;
+    transition: all 1s;
+}
+.lt_main.hidemenu {
+    padding-left: 0px;
+}
+
+.lt_topbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #3C8DBC;
+    padding-left: 180px;
+    transition: all 1s;
+}
+.lt_topbar.hidemenu {
+    padding-left: 0px;
+}
+
+.lt_topbar a {
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.lt_main .breadcrumb a {
+    color: #337AB7;
 }
