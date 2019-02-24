@@ -48,5 +48,21 @@ $(function () {
     $('.lt_topbar .icon_logout').click(function () {
         // 让模态框显示, modal('show')
         $('#logoutModal').modal('show');
+    });
+
+    //   点击模态框的退出按钮, 表示确认退出
+    //   发送 ajax 请求, 让服务器端销毁用户的登陆状态
+    $('#logoutBtn').click(function () {
+        $.ajax({
+            type: 'get',
+            url: '/employee/employeeLogout',
+            dataType: 'json',
+            success: function (info) {
+                if (info.success) {
+                    // 成功跳转至登录页
+                    location.href = 'login.html';
+                }
+            }
+        })
     })
 })
