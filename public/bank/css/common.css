@@ -153,3 +153,10 @@ ul {
 .lt_main .breadcrumb a {
     color: #337AB7;
 }
+
+.lt_main .echarts_left, 
+.lt_main .echarts_right {
+    width: 48%;
+    height: 400px;
+    background-color: skyblue;
+} 
