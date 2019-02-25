@@ -53,8 +53,29 @@
             <!-- 路径导航 -->
             <ol class="breadcrumb mt_20">
                 <li><a href="index.html">管理系统</a></li>
-                <li class="active">首页</li>
+                <li class="active">用户管理</li>
             </ol>
+
+            <div class="lt_content">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>用户名</th>
+                            <th>手机号</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 挖坑 -->
+                    </tbody>
+                </table>
+                <!-- 准备分页容器  为了右浮,直接给ul加类无法生效,所以需要加个父元素,把右浮设置给父元素 -->
+                <div class="pull-right">
+                    <ul id="paginator"></ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -83,13 +104,35 @@
     </div>
 
 
+    <script type="text/html" id="tpl">
+        {{each rows v i}}
+            <tr>
+                <td>{{i+1+(page-1)*size}}</td>
+                <td>{{v.username}}</td>
+                <td>{{v.mobile}}</td>
+                <td>{{v.isDelete===1?'正常':'禁用'}}</td>
+                <td data-id = "{{v.id}}">
+                    {{if v.isDelete === 1}}
+                        <button class="btn btn-danger">禁用</button>
+                    {{else}}
+                        <button class="btn btn-success">启用</button>
+                    {{/if}}
+                </td>
+            </tr>
+        {{/each}}
+    </script>
+
+
 
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/isLogin.js"></script>
+    <script src="./js/user.js"></script>
 </body>
 
 </html>

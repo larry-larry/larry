@@ -158,5 +158,12 @@ ul {
 .lt_main .echarts_right {
     width: 48%;
     height: 400px;
-    background-color: skyblue;
+    /* background-color: skyblue; */
 } 
+
+.table.table-bordered th,
+.table.table-bordered td  {
+    text-align: center;
+    /* 表格内容垂直居中 */
+    vertical-align: middle;
+}
